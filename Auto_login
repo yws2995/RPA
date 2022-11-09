@@ -1,0 +1,55 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Nov  9 16:18:19 2022
+
+@author: woonseok.yeo
+"""
+
+# nCloud( x: 106, y=642)
+# TiTle : Could:D - Internet Explorer
+import pyautogui
+import pyperclip
+import time
+
+size = pyautogui.size()
+print(size) 
+'''
+p = pyautogui.position()
+print(p[0],p[1])
+print(p.x, p.y)
+'''
+# 활성창 정보
+fw = pyautogui.getActiveWindow()
+print(fw.title)
+'''
+# 창의 좌표정보 
+print(fw.title)
+print(fw.size)
+#print(fw.left, fw.top, fw.right, fw.bottom)
+
+for w in pyautogui.getAllWindows():
+    print(w)
+
+'''
+
+
+#main
+
+#1. 이동한다.
+
+pyautogui.moveTo(134, 973)
+pyautogui.sleep(0.5)
+pyautogui.doubleClick()
+pyautogui.moveTo(273,532)
+time.sleep(3)
+#2. 비밀번호를 저장하고 입력한다.(x:273, y=532)
+
+def my_write(text):
+    pyperclip.copy(text)
+    pyautogui.hotkey("ctrl", "v")
+    
+my_write("dnstjr2995!a")
+
+
+#3. 엔터를 친다. 
+pyautogui.press('enter')
